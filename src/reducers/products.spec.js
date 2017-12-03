@@ -77,6 +77,28 @@ describe('reducers', () => {
 
       })
 
+      describe('when an item is removed from the cart', () => {
+
+        beforeEach(() => {
+          state = reducer(state, { type: 'REMOVE_RROM_CART', productId: 1 })
+        })
+
+        it('the inventory is replaced', () => {
+          expect(products.getVisibleProducts(state)).toEqual([
+            {
+              id: 1,
+              title: 'Product 1',
+              inventory: 2
+            }, {
+              id: 2,
+              title: 'Product 2',
+              inventory: 1
+            }
+          ])
+        })
+
+      })
+
     })
   })
 })

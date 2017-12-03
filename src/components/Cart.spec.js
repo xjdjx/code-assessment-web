@@ -5,7 +5,8 @@ import Product from './Product'
 
 const setup = (total, products = []) => {
   const actions = {
-    onCheckoutClicked: jest.fn()
+    onCheckoutClicked: jest.fn(),
+    removeFromCart: jest.fn()
   }
 
   const component = shallow(
@@ -16,7 +17,6 @@ const setup = (total, products = []) => {
     component: component,
     actions: actions,
     button: component.find('button'),
-    products: component.find(Product),
     em: component.find('em'),
     p: component.find('p')
   }
