@@ -1,17 +1,19 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Product from './Product'
+import { connect } from 'react-redux'
+import { removeFromCart } from '../actions'
+import { getTotal, getCartProducts } from '../reducers'
+import CartItem from '../components/CartItem'
 
-const Cart  = ({ products, total, onCheckoutClicked }) => {
+const Cart  = ({ products, total, removeFromCart, onCheckoutClicked }) => {
   const hasProducts = products.length > 0
   const nodes = hasProducts ? (
     products.map(product =>
-      <Product
-        title={product.title}
-        price={product.price}
-        quantity={product.quantity}
-        key={product.id}
-      />
+        <CartItem
+          key={product.id}
+          product={product}
+          onRemoveFromCartClicked = {() => removeFromCart(product.id)}
+        />
     )
   ) : (
     <em>Please add some products to cart.</em>
@@ -36,4 +38,12 @@ Cart.propTypes = {
   onCheckoutClicked: PropTypes.func
 }
 
-export default Cart
+const mapStateToProps = (state) => ({
+  products: getCartProducts(state),
+  total: getTotal(state)
+})
+
+export default connect(
+  mapStateToProps,
+  { removeFromCart }
+)(Cart)
