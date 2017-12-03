@@ -7,7 +7,7 @@ const CartItem = ({ product, onRemoveFromCartClicked }) => (
     <Product
       title={product.title}
       price={product.price}
-      quantity={product.quantity}
+      inventory={product.quantity}
       key={product.id} />
     <button onClick={onRemoveFromCartClicked}>
       Remove
