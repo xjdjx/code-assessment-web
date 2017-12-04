@@ -3,13 +3,15 @@ import ProductsContainer from './ProductsContainer'
 import CartContainer from './CartContainer'
 
 const App = () => (
-  <div>
-    <h2>Shopping Cart Example</h2>
-    <hr/>
-    <ProductsContainer />
-    <hr/>
-    <CartContainer />
-  </div>
+	<div>
+		<div className="header">
+			<h2>Acme Store</h2>
+			<p>Cart</p>
+		</div>
+		<hr/>
+		<ProductsContainer />	
+		<CartContainer />
+	</div>
 )
 
 export default App

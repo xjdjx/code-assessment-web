@@ -1,0 +1,44 @@
+.product-item {
+	position: relative;
+	background-color: $color-product-list-item-background;
+	border-radius: 8px;
+	margin-bottom: 28px;
+	height: 282px;
+	overflow: hidden;
+
+	img {
+		float: left !important;
+		margin-right: 40px;
+		width: 453px;
+	}
+
+	div {
+		margin: 30px 40px 30px 0px;
+	}
+
+	p.title {
+		display: inline;
+		font-size: 38px;
+	}
+
+	p.price {
+		float: right !important;
+		margin-top: 13px;
+		font-size: 21px;
+	}
+
+	p.inventory {
+		font-size: 13px;
+	}
+
+	button {
+		position: absolute;
+		background-color: $color-add-to-cart;
+		border-radius: 100px;
+		color: #fff;
+		width: 139px;
+		height: 41px;
+		bottom: 30px;
+		font-size: 14px;
+	}
+}

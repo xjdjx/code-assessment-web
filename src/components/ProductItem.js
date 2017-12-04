@@ -3,11 +3,14 @@ import PropTypes from 'prop-types'
 import Product from './Product'
 
 const ProductItem = ({ product, onAddToCartClicked }) => (
-  <div style={{ marginBottom: 20 }}>
+  <div className='product-item'>
+    <img src={ `images/products/img${product.id}.jpg` } />
+
     <Product
       title={product.title}
       price={product.price}
-      inventory={product.inventory} />
+      inventory={product.inventory}
+      className='product-item' />
     <button
       onClick={onAddToCartClicked}
       disabled={product.inventory > 0 ? '' : 'disabled'}>

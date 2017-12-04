@@ -1,0 +1,45 @@
+.cart {
+	position: absolute;
+	z-index: 100;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	
+	.modal {
+		background-color: $color-cart-modal;
+		z-index: 10;
+		border-radius: 8px;
+		position: fixed;
+	    top: 0;
+	    right: 0;
+	    bottom: 0;
+	    left: 0;
+		width: 780px;
+		height: 678px;
+		margin: auto;
+		box-shadow: 0px 2px 4px rgba(0,0,0,0.17);
+
+		.modal-content {
+			margin: 68px 80px;
+
+			h3 {
+				font-size: 38px;
+			}
+		}
+	}
+
+	.overlay {
+		background-color: $color-cart-overlay;
+		width: 100%;
+		height: 100%;
+	}
+}
+
+.cart-open {
+	display: block;
+}
+
+.cart-closed {
+	display: none;
+}

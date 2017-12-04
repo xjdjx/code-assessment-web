@@ -3,7 +3,9 @@ import PropTypes from 'prop-types'
 
 const Product = ({ price, inventory, title }) => (
   <div>
-    {title} - &#36;{price}{inventory ? ` x ${inventory}` : null}
+    <p className='title'>{title}</p>
+    <p className='price'>&#36;{price}</p>
+    <p className='inventory'>{inventory ? ` x ${inventory}` : null}</p>
   </div>
 )
 

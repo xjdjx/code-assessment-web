@@ -1,0 +1,14 @@
+@import "./global/variables";
+@import "./global/type";
+@import "./components/app";
+@import "./components/product-list";
+@import "./components/product-item";
+@import "./components/cart";
+@import "./components/cart-item";
+
+
+html {
+	body {
+		background-color: $color-page-background;
+	}
+}

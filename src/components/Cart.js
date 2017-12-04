@@ -5,7 +5,7 @@ import { removeFromCart } from '../actions'
 import { getTotal, getCartProducts } from '../reducers'
 import CartItem from '../components/CartItem'
 
-const Cart  = ({ products, total, removeFromCart, onCheckoutClicked }) => {
+const Cart = ({ products, total, removeFromCart, onCheckoutClicked }) => {
   const hasProducts = products.length > 0
   const nodes = hasProducts ? (
     products.map(product =>
@@ -20,14 +20,20 @@ const Cart  = ({ products, total, removeFromCart, onCheckoutClicked }) => {
   )
 
   return (
-    <div>
-      <h3>Your Cart</h3>
-      <div>{nodes}</div>
-      <p>Total: &#36;{total}</p>
-      <button onClick={onCheckoutClicked}
-        disabled={hasProducts ? '' : 'disabled'}>
-        Checkout
-      </button>
+    <div className="cart cart-open">
+      <div className="modal">
+        <div className="modal-content">
+          <h3>Your Cart</h3>
+          <hr />
+          <div>{nodes}</div>
+          <p>Total: &#36;{total}</p>
+          <button onClick={onCheckoutClicked}
+            disabled={hasProducts ? '' : 'disabled'}>
+            Checkout
+          </button>
+        </div>
+      </div>
+      <div className="overlay"></div>
     </div>
   )
 }
