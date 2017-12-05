@@ -45,3 +45,15 @@ export const checkout = products => (dispatch, getState) => {
     // dispatch({ type: types.CHECKOUT_FAILURE, cart })
   })
 }
+
+export const closeCart = () => (dispatch, getState) => {
+  dispatch({
+    type: types.CLOSE_CART
+  })
+}
+
+export const openCart = () => (dispatch, getState) => {
+  dispatch({
+    type: types.OPEN_CART
+  })
+}

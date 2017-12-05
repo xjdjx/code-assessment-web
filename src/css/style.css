@@ -1,4 +1,5 @@
 /* colors */
+/* mixins */
 body {
   font-family: Arial; }
 
@@ -8,6 +9,9 @@ h2 {
 
 #root {
   margin: 55px 82px 55px 82px; }
+  @media (max-width: 767px) {
+    #root {
+      margin: 30px 18px 30px 17px; } }
 
 hr {
   border: 0px;
@@ -17,8 +21,39 @@ hr {
   margin-bottom: 25px; }
   .header h2 {
     display: inline; }
-  .header p {
-    float: right !important; }
+    @media (max-width: 767px) {
+      .header h2 {
+        font-size: 38px; } }
+    @media (max-width: 767px) {
+      .header h2 {
+        font-size: 28px; } }
+  .header .cartStatus {
+    position: relative;
+    top: -30px;
+    text-align: right;
+    white-space: nowrap; }
+    @media (max-width: 767px) {
+      .header .cartStatus {
+        position: static;
+        top: auto;
+        text-align: left;
+        white-space: normal;
+        margin-top: 10px; } }
+    .header .cartStatus img {
+      margin: auto;
+      display: inline-block; }
+      @media (max-width: 767px) {
+        .header .cartStatus img {
+          float: left;
+          margin-right: 10px; } }
+    .header .cartStatus p {
+      white-space: nowrap;
+      margin-left: 10px;
+      float: right; }
+      @media (max-width: 767px) {
+        .header .cartStatus p {
+          float: none;
+          font-size: 14px; } }
 
 .product-list {
   margin-top: 30px; }
@@ -30,21 +65,63 @@ hr {
   margin-bottom: 28px;
   height: 282px;
   overflow: hidden; }
-  .product-item img {
+  @media (max-width: 1023px) {
+    .product-item {
+      height: 196px; } }
+  @media (max-width: 767px) {
+    .product-item {
+      height: 365px; } }
+  .product-item .productImage {
+    background-size: cover;
+    background-position: center;
     float: left !important;
-    margin-right: 40px;
-    width: 453px; }
+    margin: 0px 40px 0px 0px;
+    width: 453px;
+    height: 282px; }
+    @media (max-width: 1023px) {
+      .product-item .productImage {
+        width: 272px;
+        height: 196px; } }
+    @media (max-width: 767px) {
+      .product-item .productImage {
+        width: 100%;
+        height: 211px;
+        margin-bottom: 30px; } }
   .product-item div {
     margin: 30px 40px 30px 0px; }
+    @media (max-width: 767px) {
+      .product-item div {
+        margin: 30px 23px 30px 23px; } }
   .product-item p.title {
     display: inline;
     font-size: 38px; }
+    @media (max-width: 1023px) {
+      .product-item p.title {
+        font-size: 28px; } }
+    @media (max-width: 767px) {
+      .product-item p.title {
+        font-size: 21px; } }
   .product-item p.price {
     float: right !important;
     margin-top: 13px;
     font-size: 21px; }
+    @media (max-width: 1023px) {
+      .product-item p.price {
+        margin-top: 3px; } }
+    @media (max-width: 767px) {
+      .product-item p.price {
+        font-size: 16px; } }
   .product-item p.inventory {
-    font-size: 13px; }
+    font-size: 13px;
+    margin-top: 20px;
+    color: #939393; }
+    @media (max-width: 1023px) {
+      .product-item p.inventory {
+        font-size: 12px; } }
+    @media (max-width: 767px) {
+      .product-item p.inventory {
+        margin-top: 9px;
+        font-size: 12px; } }
   .product-item button {
     position: absolute;
     background-color: #5E97D1;
@@ -54,6 +131,12 @@ hr {
     height: 41px;
     bottom: 30px;
     font-size: 14px; }
+    @media (max-width: 767px) {
+      .product-item button {
+        font-size: 13px;
+        width: 121px;
+        height: 31px;
+        margin-left: 23px; } }
 
 .cart {
   position: absolute;
@@ -75,10 +158,26 @@ hr {
     height: 678px;
     margin: auto;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.17); }
+    .cart .modal .close {
+      position: absolute;
+      top: 30px;
+      right: 30px; }
     .cart .modal .modal-content {
       margin: 68px 80px; }
       .cart .modal .modal-content h3 {
-        font-size: 38px; }
+        font-size: 38px;
+        margin-bottom: 20px; }
+      .cart .modal .modal-content .no-items {
+        text-align: center;
+        width: 250px;
+        margin: auto;
+        position: relative;
+        top: 150px; }
+        .cart .modal .modal-content .no-items svg {
+          display: block; }
+        .cart .modal .modal-content .no-items em {
+          color: #919191;
+          font-size: 21px; }
   .cart .overlay {
     background-color: rgba(242, 244, 247, 0.9);
     width: 100%;

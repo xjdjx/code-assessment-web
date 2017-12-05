@@ -4,3 +4,14 @@ $color-product-list-item-background: white;
 $color-add-to-cart: #5E97D1;
 $color-cart-modal: white;
 $color-cart-overlay: rgba(242, 244, 247, 0.9);
+$color-product-inventory: #939393;
+
+/* mixins */
+@mixin breakpoint($size) {
+   @if $size == tablet {
+     @media (max-width: 1023px) { @content ; }
+  }
+    @else if $size == mobile {
+     @media (max-width: 767px) { @content ; }
+  }
+}

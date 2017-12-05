@@ -20,11 +20,35 @@
 		margin: auto;
 		box-shadow: 0px 2px 4px rgba(0,0,0,0.17);
 
+		.close {
+			position: absolute;
+			top: 30px;
+			right: 30px;
+		}
+
 		.modal-content {
 			margin: 68px 80px;
 
 			h3 {
 				font-size: 38px;
+				margin-bottom: 20px;
+			}
+
+			.no-items {
+				text-align: center;
+				width: 250px;
+				margin: auto;
+				position: relative;
+				top: 150px;
+
+				svg {
+					display: block;
+				}
+
+				em {
+					color: #919191;
+					font-size: 21px;
+				}
 			}
 		}
 	}

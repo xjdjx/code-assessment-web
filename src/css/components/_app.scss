@@ -1,5 +1,9 @@
 #root {
 	margin: 55px 82px 55px 82px;
+
+	@include breakpoint(mobile) {
+		margin: 30px 18px 30px 17px;
+	}
 }
 
 hr {
@@ -12,9 +16,49 @@ hr {
 
 	h2 {
 		display: inline;
+
+		@include breakpoint(mobile) {
+			font-size: 38px;
+		}
+
+		@include breakpoint(mobile) {
+			font-size: 28px;
+		}
 	}
 
-	p {
-		float: right !important;
+	.cartStatus {
+		position: relative;
+		top: -30px;
+		text-align: right;
+		white-space: nowrap;
+
+		@include breakpoint(mobile) {
+			position: static;
+			top: auto;
+			text-align: left;
+			white-space: normal;
+			margin-top: 10px;
+		}
+		
+		img {
+			margin: auto;
+			display: inline-block;
+
+			@include breakpoint(mobile) {
+				float: left;
+				margin-right: 10px;
+			}
+		}
+
+		p {
+			white-space: nowrap;
+			margin-left: 10px;
+			float: right;
+
+			@include breakpoint(mobile) {
+				float: none;
+				font-size: 14px;
+			}
+		}
 	}
 }
