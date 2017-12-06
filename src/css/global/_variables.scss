@@ -5,6 +5,10 @@ $color-add-to-cart: #5E97D1;
 $color-cart-modal: white;
 $color-cart-overlay: rgba(242, 244, 247, 0.9);
 $color-product-inventory: #939393;
+$color-mobile-checkout: #5E97D1;
+$color-remove: #CC1D39;
+$color-cart-label: #9D9D9D;
+$color-cart-value: black;
 
 /* mixins */
 @mixin breakpoint($size) {

@@ -53,10 +53,10 @@ export const cartViz = (state = initialState.cartVisible, action) => {
   switch (action.type) {
     case OPEN_CART:
       state = true
-      return true
+      return state
     case CLOSE_CART:
       state = false
-      return false
+      return state
     default:
       return state
   }
