@@ -11,7 +11,7 @@ const remapJson = json => {
 }
 
 export default {
-  getProducts: (cb) => {
+	getProducts: (cb) => {
   	return fetch(`http://tech.work.co/shopping-cart/products.json`)
       .then(response => response.json())
       .then(json => cb(remapJson(json)))

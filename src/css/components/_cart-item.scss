@@ -1,0 +1,77 @@
+.cart-item {
+	margin-bottom: 40px;
+	clear: both;
+
+	.productImage {
+		background-size: cover;
+		background-position: center;
+	    float: left !important;
+		margin: 0px 20px 0px 0px;
+		width: 200px;
+		height: 100px;
+
+		@include breakpoint(tablet) {
+			width: 150px;
+			height: 90px;
+		}
+
+		@include breakpoint(mobile) {
+			width: 107px;
+			height: 78px;
+			margin: 0px 14px 0px 0px;
+		}
+	}
+
+	p.title {
+		display: inline;
+		font-size: 28px;
+
+		@include breakpoint(tablet) {
+			font-size: 22px;
+		}
+
+		@include breakpoint(mobile) {
+			font-size: 16px;
+		}
+	}
+
+	p.price {
+		float: right !important;
+		margin-top: 0px;
+		font-size: 28px;
+
+		@include breakpoint(tablet) {
+			margin-top: 3px;
+			font-size: 22px;
+		}
+
+		@include breakpoint(mobile) {
+			font-size: 14px;
+		}
+	}
+
+	p.inventory {
+		font-size: 13px;
+		margin-top: 20px;
+		color: $color-product-inventory;
+
+		@include breakpoint(tablet) {
+			font-size: 12px;
+		}
+
+		@include breakpoint(mobile) {
+			margin-top: 9px;
+			font-size: 12px;
+		}
+	}
+
+	button {
+		color: $color-remove;
+		text-transform: uppercase;
+		font-size: 14px;
+		padding: 0px;
+		position: relative;
+		bottom: 0px;
+		border: 0px;
+	}
+}

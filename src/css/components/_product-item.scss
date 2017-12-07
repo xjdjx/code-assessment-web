@@ -1,0 +1,106 @@
+.product-item {
+	position: relative;
+	background-color: $color-product-list-item-background;
+	border-radius: 8px;
+	margin-bottom: 28px;
+	height: 282px;
+	overflow: hidden;
+
+	@include breakpoint(tablet) {
+		height: 196px;
+	}
+
+	@include breakpoint(mobile) {
+		height: 365px;
+	}
+
+	.productImage {
+		background-size: cover;
+		background-position: center;
+	    float: left !important;
+		margin: 0px 40px 0px 0px;
+		width: 453px;
+		height: 282px;
+
+		@include breakpoint(tablet) {
+			width: 272px;
+			height: 196px;
+		}
+
+		@include breakpoint(mobile) {
+			width: 100%;
+			height: 211px;
+			margin-bottom: 30px;
+		}
+	}
+
+	
+
+	div {
+		margin: 30px 40px 30px 0px;
+
+		@include breakpoint(mobile) {
+			margin: 30px 23px 30px 23px;
+		}
+	}
+
+	p.title {
+		display: inline;
+		font-size: 38px;
+
+		@include breakpoint(tablet) {
+			font-size: 28px;
+		}
+
+		@include breakpoint(mobile) {
+			font-size: 21px;
+		}
+	}
+
+	p.price {
+		float: right !important;
+		margin-top: 13px;
+		font-size: 21px;
+
+		@include breakpoint(tablet) {
+			margin-top: 3px;
+		}
+
+		@include breakpoint(mobile) {
+			font-size: 16px;
+		}
+	}
+
+	p.inventory {
+		font-size: 13px;
+		margin-top: 20px;
+		color: $color-product-inventory;
+
+		@include breakpoint(tablet) {
+			font-size: 12px;
+		}
+
+		@include breakpoint(mobile) {
+			margin-top: 9px;
+			font-size: 12px;
+		}
+	}
+
+	button {
+		position: absolute;
+		background-color: $color-add-to-cart;
+		border-radius: 100px;
+		color: #fff;
+		width: 139px;
+		height: 41px;
+		bottom: 30px;
+		font-size: 14px;
+
+		@include breakpoint(mobile) {
+			font-size: 13px;
+			width: 121px;
+			height: 31px;
+			margin-left: 23px;
+		}
+	}
+}

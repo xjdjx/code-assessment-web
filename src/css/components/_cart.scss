@@ -1,0 +1,156 @@
+.cart {
+	position: fixed;
+	z-index: 100;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100vh;
+	
+	.modal {
+		background-color: $color-cart-modal;
+		z-index: 10;
+		border-radius: 8px;
+		position: fixed;
+	    top: 0;
+	    right: 0;
+	    bottom: 0;
+	    left: 0;
+		width: 780px;
+		height: 678px;
+		margin: auto;
+		box-shadow: 0px 2px 4px rgba(0,0,0,0.17);
+
+		@include breakpoint(tablet) {
+			font-size: 12px;
+		}
+
+		@include breakpoint(mobile) {
+			border-radius: 0px;
+			margin: 0px;
+			font-size: 12px;
+			width: 100%;
+			height: 100%;
+		}
+
+		.hidden {
+			display: none;
+		}
+
+		.close {
+			position: absolute;
+			top: 30px;
+			right: 30px;
+
+			@include breakpoint(mobile) {
+				top: 20px;
+				right: 20px;
+
+				img {
+					width: 20px;
+					height: 20px;
+				}
+			}
+		}
+
+		button.checkout {
+			border-radius: 0px;
+			font-size: 14px;
+			width: 100%;
+			height: 44px;
+			color: #fff;
+			text-transform: uppercase;
+			background-color: $color-mobile-checkout;
+			position: absolute;
+			bottom: 0px;
+		}
+
+		.modal-content {
+			margin: 68px 80px;
+
+			@include breakpoint(tablet) {
+				font-size: 12px;
+			}
+
+			@include breakpoint(mobile) {
+				margin: 48px 17px;
+			}
+
+			h3 {
+				font-size: 38px;
+				margin-bottom: 20px;
+
+				@include breakpoint(mobile) {
+					font-size: 28px;
+				}
+			}
+
+			hr {
+				margin-bottom: 17px;
+			}
+
+			.product-list {
+				margin-top: 17px;
+			}
+
+			.no-items {
+				text-align: center;
+				width: 250px;
+				margin: auto;
+				position: relative;
+				top: 150px;
+
+				svg {
+					display: block;
+				}
+
+				em {
+					color: #919191;
+					font-size: 21px;
+				}
+			}
+
+			.total-item {
+				margin-bottom: 17px;
+			}
+
+			span {
+				font-size: 20px;
+
+				@include breakpoint(tablet) {
+					font-size: 18px;
+				}
+
+				@include breakpoint(mobile) {
+					font-size: 14px;
+				}
+			}
+
+			.label {
+				color: $color-cart-label;
+			}
+
+			.value {
+				color: $color-cart-value;
+				float: right;
+			}
+
+			.value::before {
+			    content:"$";
+			}
+		}
+	}
+
+	.overlay {
+		background-color: $color-cart-overlay;
+		width: 100%;
+		height: 100vh;
+	}
+}
+
+.cart-open {
+	display: block;
+}
+
+.cart-closed {
+	display: none;
+}
