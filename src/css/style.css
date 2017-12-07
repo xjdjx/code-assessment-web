@@ -308,4 +308,8 @@ hr {
     border: 0px; }
 
 html body {
-  background-color: #F4F5F7; }
+  background-color: #F4F5F7;
+  overflow: visible; }
+
+html body.cart-open {
+  overflow: hidden; }

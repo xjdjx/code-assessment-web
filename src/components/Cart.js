@@ -9,10 +9,18 @@ const TAX_RATE = .08
 
 const Cart = ({ products, total, cartVisible, removeFromCart, onCheckoutClicked, onCloseCartClicked }) => {
   const hasProducts = products.length > 0
-  const vizSuffix = cartVisible ? 'open' : 'closed'
+  let vizSuffix = 'open';
   const taxes = Math.round((total * TAX_RATE)*100)/100
   const grandTotal = (total*1) + taxes
   const hideAdditional = hasProducts ? '' : 'hidden'
+
+  if (cartVisible) {
+    document.body.classList.add('cart-open')
+  } else {
+    document.body.classList.remove('cart-open')
+    vizSuffix = 'closed'
+  }
+
   const nodes = hasProducts ? (
     products.map(product =>
         <CartItem
