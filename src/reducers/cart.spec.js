@@ -4,7 +4,8 @@ describe('reducers', () => {
   describe('cart', () => {
     const initialState = {
       addedIds: [],
-      quantityById: {}
+      quantityById: {},
+      cartVisible: false
     }
 
     it('should provide the initial state', () => {
@@ -22,14 +23,23 @@ describe('reducers', () => {
     it('should handle ADD_TO_CART action', () => {
       expect(cart(initialState, { type: 'ADD_TO_CART', productId: 1 })).toEqual({
         addedIds: [ 1 ],
-        quantityById: { 1: 1 }
+        quantityById: { 1: 1 },
+        cartVisible: false
       })
     })
 
+
     it('should handle REMOVE_FROM_CART action', () => {
-      expect(cart(initialState, { type: 'REMOVE_FROM_CART', productId: 1 })).toEqual({
+      const populatedState = {
+        addedIds: [1],
+        quantityById: {1:1},
+        cartVisible: false
+      }
+
+      expect(cart(populatedState, { type: 'REMOVE_FROM_CART', productId: 1 })).toEqual({
         addedIds: [],
-        quantityById: {}
+        quantityById: {},
+        cartVisible: false
       })
     })
 
@@ -37,24 +47,28 @@ describe('reducers', () => {
       it('should handle ADD_TO_CART action', () => {
         const state = {
           addedIds: [ 1, 2 ],
-          quantityById: { 1: 1, 2: 1 }
+          quantityById: { 1: 1, 2: 1 },
+          cartVisible: false
         }
 
         expect(cart(state, { type: 'ADD_TO_CART', productId: 2 })).toEqual({
           addedIds: [ 1, 2 ],
-          quantityById: { 1: 1, 2: 2 }
+          quantityById: { 1: 1, 2: 2 },
+          cartVisible: false
         })
       })
 
       it('should handle REMOVE_FROM_CART action', () => {
         const state = {
           addedIds: [ 1, 2 ],
-          quantityById: { 1: 1, 2: 1 }
+          quantityById: { 1: 1, 2: 1 },
+          cartVisible: false
         }
 
         expect(cart(state, { type: 'REMOVE_FROM_CART', productId: 1 })).toEqual({
           addedIds: [ 2 ],
-          quantityById: { 2: 1 }
+          quantityById: { 2: 1 },
+          cartVisible: false
         })
       })
 

@@ -34,7 +34,7 @@ describe('CartItem component', () => {
 
   it('should render product', () => {
     const { product } = setup(productProps)
-    expect(product.props()).toEqual({  title: 'Product 1', price: 9.99, quantity: 6 })
+    expect(product.props()).toEqual({  title: 'Product 1', price: 9.99, inventory: 6 })
   })
 
   it('should render Remove message', () => {
